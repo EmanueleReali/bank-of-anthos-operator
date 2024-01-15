@@ -1,0 +1,27 @@
+# permissions for end users to view bankinstances.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: bankinstance-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: bank-of-anthos-operator
+    app.kubernetes.io/part-of: bank-of-anthos-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: bankinstance-viewer-role
+rules:
+- apiGroups:
+  - my.domain
+  resources:
+  - bankinstances
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - my.domain
+  resources:
+  - bankinstances/status
+  verbs:
+  - get

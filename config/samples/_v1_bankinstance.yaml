@@ -1,0 +1,12 @@
+apiVersion: my.domain/v1
+kind: BankInstance
+metadata:
+  labels:
+    app.kubernetes.io/name: bankinstance
+    app.kubernetes.io/instance: bankinstance-sample
+    app.kubernetes.io/part-of: bank-of-anthos-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: bank-of-anthos-operator
+  name: bankinstance-sample
+spec:
+  # TODO(user): Add fields here
